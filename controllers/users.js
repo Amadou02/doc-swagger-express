@@ -1,9 +1,7 @@
 const users = require('./../models/users')
 
 exports.getAll = (req, res) => {
-  return res.status(200).json({
-    users,
-  })
+  return res.status(200).json(users)
 }
 
 /**
@@ -13,7 +11,7 @@ exports.getAll = (req, res) => {
  * @returns Object
  */
 exports.getOne = (req, res) => {
-  console.log();
+  console.log()
   const user = users.find((user) => user.id == req.params.id)
   return res.status(200).json(user)
 }
